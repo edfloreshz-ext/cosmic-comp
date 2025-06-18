@@ -867,7 +867,7 @@ dependencies = [
  "tracing-subscriber",
  "tracy-client 0.18.0",
  "wayland-backend",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "xcursor",
  "xdg",
  "xdg-user",
@@ -936,7 +936,7 @@ dependencies = [
  "wayland-client",
  "wayland-protocols",
  "wayland-protocols-wlr",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "wayland-server",
 ]
 
@@ -4730,7 +4730,7 @@ checksum = "8917285742e9f3e1683f0a9c4e6b57960b7314d0b08d30d1ecd426713ee2eee9"
 [[package]]
 name = "smithay"
 version = "0.6.0"
-source = "git+https://github.com/smithay/smithay.git?rev=776ba42#776ba424423584400e76317e688b160546e68ca7"
+source = "git+https://github.com/edfloreshz-ext/smithay.git?branch=feat%2Fext-background-effect#85136b749b9c6b89e8f5ffcefd88f381026f31be"
 dependencies = [
  "aliasable",
  "appendlist",
@@ -4802,7 +4802,7 @@ dependencies = [
  "wayland-cursor",
  "wayland-protocols",
  "wayland-protocols-wlr",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "xkbcommon 0.7.0",
  "xkeysym",
 ]
@@ -5723,8 +5723,7 @@ dependencies = [
 [[package]]
 name = "wayland-backend"
 version = "0.3.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fe770181423e5fc79d3e2a7f4410b7799d5aab1de4372853de3c6aa13ca24121"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
 dependencies = [
  "cc",
  "downcast-rs",
@@ -5737,13 +5736,12 @@ dependencies = [
 [[package]]
 name = "wayland-client"
 version = "0.31.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "978fa7c67b0847dbd6a9f350ca2569174974cd4082737054dbb7fbb79d7d9a61"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
 dependencies = [
  "bitflags 2.9.1",
  "rustix 0.38.44",
  "wayland-backend",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (git+https://github.com/Smithay/wayland-rs)",
 ]
 
 [[package]]
@@ -5781,26 +5779,24 @@ dependencies = [
 [[package]]
 name = "wayland-protocols"
 version = "0.32.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "779075454e1e9a521794fed15886323ea0feda3f8b0fc1390f5398141310422a"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
 dependencies = [
  "bitflags 2.9.1",
  "wayland-backend",
  "wayland-client",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (git+https://github.com/Smithay/wayland-rs)",
  "wayland-server",
 ]
 
 [[package]]
 name = "wayland-protocols-misc"
 version = "0.3.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "635cf2968bd88599445b25a2eeef655d463bb04f9aed04e4bf8c2018f3d4fc41"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
 dependencies = [
  "bitflags 2.9.1",
  "wayland-backend",
  "wayland-protocols",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (git+https://github.com/Smithay/wayland-rs)",
  "wayland-server",
 ]
 
@@ -5814,20 +5810,19 @@ dependencies = [
  "wayland-backend",
  "wayland-client",
  "wayland-protocols",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "wayland-protocols-wlr"
 version = "0.3.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1cb6cdc73399c0e06504c437fe3cf886f25568dd5454473d565085b36d6a8bbf"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
 dependencies = [
  "bitflags 2.9.1",
  "wayland-backend",
  "wayland-client",
  "wayland-protocols",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (git+https://github.com/Smithay/wayland-rs)",
  "wayland-server",
 ]
 
@@ -5843,23 +5838,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "wayland-scanner"
+version = "0.31.6"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
+dependencies = [
+ "proc-macro2",
+ "quick-xml",
+ "quote",
+]
+
+[[package]]
 name = "wayland-server"
 version = "0.31.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "485dfb8ccf0daa0d34625d34e6ac15f99e550a7999b6fd88a0835ccd37655785"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
 dependencies = [
  "bitflags 2.9.1",
  "downcast-rs",
  "rustix 0.38.44",
  "wayland-backend",
- "wayland-scanner",
+ "wayland-scanner 0.31.6 (git+https://github.com/Smithay/wayland-rs)",
 ]
 
 [[package]]
 name = "wayland-sys"
 version = "0.31.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dbcebb399c77d5aa9fa5db874806ee7b4eba4e73650948e8f93963f128896615"
+source = "git+https://github.com/Smithay/wayland-rs#6b2ba7d4fa2e868e4be688618081179c0e2517c0"
 dependencies = [
  "dlib",
  "log",

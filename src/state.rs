@@ -73,6 +73,7 @@ use smithay::{
     utils::{Clock, Monotonic, Point},
     wayland::{
         alpha_modifier::AlphaModifierState,
+        background_effect::BackgroundEffectState,
         compositor::{CompositorClientState, CompositorState, SurfaceData},
         cursor_shape::CursorShapeManagerState,
         dmabuf::{DmabufFeedback, DmabufGlobal, DmabufState},
@@ -549,6 +550,7 @@ impl State {
         TextInputManagerState::new::<Self>(&dh);
         VirtualKeyboardManagerState::new::<State, _>(&dh, client_is_privileged);
         AlphaModifierState::new::<Self>(&dh);
+        BackgroundEffectState::new::<Self>(&dh);
         SinglePixelBufferState::new::<Self>(&dh);
 
         let idle_notifier_state = IdleNotifierState::<Self>::new(&dh, handle.clone());
